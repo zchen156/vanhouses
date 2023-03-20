@@ -1,0 +1,112 @@
+import pandas as pd
+import plotly.graph_objs as go
+import dash
+from dash import dash, html, dcc, dash_table, Input, Output
+import dash_bootstrap_components as dbc
+import plotly.express as px
+import numpy as np
+import matplotlib.pyplot as plt
+
+            
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
+
+# Load data (importing csv into pandas)
+
+df_original = pd.read_csv('van_houses-2022&2023.csv')
+
+# Take a random sample of 100 rows
+df = df_original.sample(frac=0.1, random_state=42)
+
+# Save the sampled dataframe as a CSV file
+df.to_csv('df_sampled.csv', index=False)
+
+# dropdown selections
+zoning_classification = np.sort(df["zoning_classification"].unique())
+geo_local_area = np.sort(df["Geo Local Area"].unique())
+year = np.sort(df["report_year"].unique())
+
+#App layout
+app.layout = dbc.Container([
+    
+    #App title
+    html.H1("Vancouver Housing Market", style = {'text-align': 'left'}),
+    html.Br(),
+    
+    #Dropdown layout
+    dbc.Row([
+        dbc.Col([
+    
+    #1st Dropdown selection for "report_year"
+    html.H6("Year Reported"),
+    dcc.Dropdown(id = "report_year",
+                 value = 2022,
+                 clearable = False, 
+                 multi = False,
+                 options=[{'label': x, 'value': x} for x in year],
+                 style = {'width': "35%"}),
+    html.Br(),
+
+    #2nd Dropdown selection for "geo_local_area"
+    html.H6("Neigborhood"),
+    dcc.Dropdown(id = "geo_local_area",
+                 value = 2022,
+                 #clearable = False, 
+                 multi =True,
+                 options=[{'label': x, 'value': x} for x in geo_local_area],
+                 style = {'width': "50%"}),
+    html.Br(),
+
+    #3rd Dropdown selection for "zoning_classification"
+    html.H6("Type of the Property"),
+    dcc.Dropdown(id = "zoning_classification",
+                 value = 2022,
+                 #clearable = False, 
+                 multi =True,
+                 options=[{'label': x, 'value': x} for x in zoning_classification],
+                 style = {'width': "50%"}),
+    html.Br()
+                 ])
+    
+]),
+
+
+    
+html.Br(),
+html.H5('Distribution of Housing Prices'),
+dcc.Graph(id="his_housing_price")
+])
+
+
+# Connect plots with Dash components
+@app.callback(
+    Output("his_housing_price", "figure"),
+    Input("report_year", "value"),
+     Input("geo_local_area", "value"),
+     Input("zoning_classification", "value")
+     
+)
+
+def housing_price_histogram(year_slcted, neighborhood_slcted, type_property_slcted):
+    
+    #filter data based on user input
+    dff = df.copy()
+    dff = dff[dff['report_year'] == year_slcted]
+    dff = dff[(dff['geo_local_area'] == neighborhood_slcted ) & (dff['zoning_classification'] == type_property_slcted)]
+    #dff = dff[dff['zoning_classification'] == type_property_slcted]
+    
+
+    #plot distribution of housing prices
+    his = px.histogram(
+        dff, nbins=40,
+        x="current_land_value")
+    his.update_traces(marker=dict(line=dict(width=1, color="white")))
+    his.update_layout(
+    xaxis_title_text='House Prices ($)', # xaxis label
+    yaxis_title_text='Number of Houses', # yaxis label
+    bargap=0.1)
+    return his
+
+   
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
