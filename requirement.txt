@@ -1,0 +1,7 @@
+pandas
+plotly.graph_objs
+plotly.express
+dash
+dash_bootstrap_components
+plotly
+numpy
