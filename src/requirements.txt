@@ -2,4 +2,4 @@ dash~=2.8.1
 dash_bootstrap_components~=1.4.0
 gunicorn~=20.1.0
 pandas~=1.5.3
-PIL~=2.1.0
+PIL~=9.4.0
