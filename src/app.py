@@ -13,7 +13,7 @@ server = app.server
 
 # add pic
 #image_path = 'assets/dash_vanhouses.jpg'
-pil_img = Image.open('assets/dash_vanhouses.jpg')
+pil_img = Image.open('src/dash_vanhouses.jpg')
 
 
 
