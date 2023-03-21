@@ -1,0 +1,10 @@
+pandas
+gunicorn
+altair
+dash
+dash_bootstrap_components
+plotly
+geopandas
+numpy
+utm
+pillow
