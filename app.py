@@ -67,17 +67,27 @@ app.layout = dbc.Container([
 html.Br(),
 html.H5('Distribution of Housing Prices'),
 dcc.Graph(id="his_housing_price"),
-
 html.Br(),
+
+
 html.H5('Bubble Chart of Housing Prices by Legal Type'),
-dcc.Graph(id="bb_housing_price")
+dcc.Graph(id="bc_housing_price"),
+html.Br(),
+
+
+html.H5('Total Amount of houses in Different Neighborhood'),
+dcc.Graph(id="pc_housing_price"),      
+    
+
 ])
+
 
 
 # Connect plots with Dash components
 @app.callback(
     Output("his_housing_price", "figure"),
-    Output("bb_housing_price", "figure"),
+    Output("bc_housing_price", "figure"),
+    Output("pc_housing_price", "figure"),
     Input("report_year", "value"),
     Input("geo_local_area", "value"),
     Input("zoning_classification", "value")
@@ -112,9 +122,14 @@ def housing_price_histogram(year_slcted, neighborhood_slcted, type_property_slct
                     size_max=40,
                     labels={"Geo Local Area": "Neighborhood", 
                             "current_land_value": "House Prices ($)"})
-    bc.update_layout(height=800, width=500)
+    #bc.update_layout(height=800, width=500)
     
-    return his, bc
+    df_pc = df["Geo Local Area"].value_counts()
+    pc = px.pie(df_pc, values = df_pc.values, names = df_pc.index, color = "Geo Local Area")
+
+
+
+    return his, bc, pc
 
 
 
