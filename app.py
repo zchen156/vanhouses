@@ -52,12 +52,12 @@ app.layout = dbc.Container([
     #3rd Dropdown selection for "zoning_classification"
     html.H6("Type of the Property"),
     dcc.Dropdown(id = "zoning_classification",
-                 value = ["Duplex","Industrial"],
+                 value = ["Commercial","Historical Area"],
                  #clearable = False, 
                  multi =True,
                  options=[{'label': x, 'value': x} for x in zoning_classification],
                  style = {'width': "50%"}),
-    html.Br()
+    
                  ])
     
 ]),
@@ -66,13 +66,18 @@ app.layout = dbc.Container([
     
 html.Br(),
 html.H5('Distribution of Housing Prices'),
-dcc.Graph(id="his_housing_price")
+dcc.Graph(id="his_housing_price"),
+
+html.Br(),
+html.H5('Bubble Chart of Housing Prices by Legal Type'),
+dcc.Graph(id="bb_housing_price")
 ])
 
 
 # Connect plots with Dash components
 @app.callback(
     Output("his_housing_price", "figure"),
+    Output("bb_housing_price", "figure"),
     Input("report_year", "value"),
     Input("geo_local_area", "value"),
     Input("zoning_classification", "value")
@@ -97,9 +102,22 @@ def housing_price_histogram(year_slcted, neighborhood_slcted, type_property_slct
     yaxis_title_text='Number of Houses', # yaxis label
     bargap=0.1)
     
-    return his
+    bc = px.scatter(df, 
+                    x="Geo Local Area",
+                    y="current_land_value",
+                    color="legal_type", 
+                    size="current_land_value",
+                    hover_name="year_built", 
+                    log_x=False, 
+                    size_max=40,
+                    labels={"Geo Local Area": "Neighborhood", 
+                            "current_land_value": "House Prices ($)"})
+    bc.update_layout(height=800, width=500)
+    
+    return his, bc
 
-   
+
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
