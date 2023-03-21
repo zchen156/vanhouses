@@ -7,4 +7,3 @@ plotly
 geopandas
 numpy
 utm
-PIL
