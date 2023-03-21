@@ -6,13 +6,17 @@ import plotly.express as px
 import numpy as np
 from PIL import Image
 
+
             
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
 # add pic
-image_path = 'dash_vanhouses.jpg'
-pil_img = Image.open("dash_vanhouses.jpg")
+#image_path = 'assets/dash_vanhouses.jpg'
+pil_img = Image.open('assets/dash_vanhouses.jpg')
+
+
+
 
 
 # load data (importing csv into pandas)
@@ -35,14 +39,11 @@ card_main = dbc.Card(
                     "Our Python-based dashboard application gives an easy way for people to explore housing prices in Vancouver city.",
                     className="card-text",
                 ),
-                #dcc.Dropdown(id='user_choice', options=[{'label': yr, "value": yr} for yr in df.year.unique()],
-                             #value=2007, clearable=False, style={"color": "#000000"}),
-                # dbc.Button("Press me", color="primary"),
-                # dbc.CardLink("GirlsWhoCode", href="https://girlswhocode.com/", target="_blank"),
+                
             ]
         ),
     ],
-    color="light",   # https://bootswatch.com/default/ for more card colors
+    color="light",   
     style={"height": 380},
     #inverse=True,   # change color of text (black or white)
     outline=False,  # True = remove the block colors from the background and header

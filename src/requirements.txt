@@ -7,4 +7,4 @@ plotly
 geopandas
 numpy
 utm
-Pillow
+pillow
