@@ -1,8 +1,4 @@
-pandas
-plotly.express
-dash
-dash_bootstrap_components
-plotly
-numpy
-gunicorn
-PIL
+dash~=2.8.1
+dash_bootstrap_components~=1.4.0
+gunicorn~=20.1.0
+pandas~=1.5.3
