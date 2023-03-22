@@ -1,4 +1,4 @@
-# vanhouses
+# Vancouver Housing Market Dashboard
 
 ## Welcome
 
