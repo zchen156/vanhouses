@@ -2,17 +2,17 @@
 
 ## Welcome
 
-Thank you for being interested in our Vancouver Housing Market App!
+Thank you for being interested in  Vancouver Housing Market App!
 
-My app is designed to provide an interactive and informative way to explore the Vancouver housing market. Whether you're a real estate professional, a data analyst, or simply curious about the housing price trends in Vancouver, our app has something for you.
+The app is designed to provide an interactive and informative way to explore the Vancouver housing market. Whether you're a real estate professional, a data analyst, or simply curious about the housing price trends in Vancouver, this app has something for you.
 
-I hope you find our app useful and informative. Happy exploring!
+I hope you find my app useful and informative. Happy exploring!
 
 ## Motivation and purpose
 
 The housing market in Vancouver has been one of the most active and competitive in North America in recent years, with prices fluctuating dramatically and demand consistently outstripping supply. As a result, real estate professionals, home buyers, sellers, researchers, policymakers, etc. all need access to up-to-date information on housing prices and trends.
 
-The purpose of our app is to provide a user-friendly, interactive, and informative tool for monitoring Vancouver's housing market. The app aggregates data on housing prices from the City of Vancouver Open Data Portal and presents it in an engaging format, allowing users to gain insights into trends and patterns over time.
+The purpose of this app is to provide a user-friendly, interactive, and informative tool for monitoring Vancouver's housing market. The app aggregates data on housing prices from the City of Vancouver Open Data Portal and presents it in an engaging format, allowing users to gain insights into trends and patterns over time.
 
 The motivation for developing this app was to create a comprehensive and informative app that can serve as a valuable resource for anyone interested in understanding Vancouver's housing market. The app is designed to be user-friendly and interactive, with a range of visualizations that help users make sense of the presented information. Ultimately, the goal is to help users stay informed about the state of the market and make better-informed decisions.
 
@@ -81,7 +81,7 @@ Congratulations, you are now able to develop and contribute to the vanhouses das
 
 ## Contributing
 
-We welcome anyone who is interested in contributing to our app for Vancouver's housing market. Our project is open-source, which means that anyone can view and contribute to the code on our GitHub repository.
+We welcome anyone who is interested in contributing to my app for Vancouver's housing market. This project is open-source, which means that anyone can view and contribute to the code on this GitHub repository.
 
 If you are interested in getting involved, check out the [contributing guidelines](CONTRIBUTING.md). Please note that this project is released with a [Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
