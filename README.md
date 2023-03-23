@@ -14,7 +14,9 @@ The housing market in Vancouver has been one of the most active and competitive 
 
 The purpose of this app is to provide a user-friendly, interactive, and informative tool for monitoring Vancouver's housing market. The app aggregates data on housing prices from the City of Vancouver Open Data Portal and presents it in an engaging format, allowing users to gain insights into trends and patterns over time.
 
-The motivation for developing this app was to create a comprehensive and informative app that can serve as a valuable resource for anyone interested in understanding Vancouver's housing market. The app is designed to be user-friendly and interactive, with a range of visualizations that help users make sense of the presented information. Ultimately, the goal is to help users stay informed about the state of the market and make better-informed decisions.Visit [Proposal](https://github.com/UBC-MDS/van_houses/blob/main/reports/proposal.md)) for further information.
+The motivation for developing this app was to create a comprehensive and informative app that can serve as a valuable resource for anyone interested in understanding Vancouver's housing market. The app is designed to be user-friendly and interactive, with a range of visualizations that help users make sense of the presented information. Ultimately, the goal is to help users stay informed about the state of the market and make better-informed decisions.
+
+Visit [Proposal](https://github.com/UBC-MDS/van_houses/blob/main/reports/proposal.md) for further information.
 
 
 
