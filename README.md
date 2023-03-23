@@ -90,7 +90,7 @@ We welcome anyone who is interested in contributing to my app for Vancouver's ho
 If you are interested in getting involved, check out the [contributing guidelines](CONTRIBUTING.md). Please note that this project is released with a [Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
 
-## Data Source
+## Reference
 
 The data on housing prices are retrieved from the [City of Vancouver Open Data Portal](https://opendata.vancouver.ca/explore/dataset/property-tax-report/table/?sort=-tax_assessment_year).
 
